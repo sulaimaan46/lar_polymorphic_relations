@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/get_lazy_image', [UserController::class,'getlazyImage'] );
+
+Route::get('/get_eagar_image', [UserController::class,'getEagarImage'] );
+
+Route::get('/get_users', [UserController::class,'index'] );
+
+Route::get('/set_image/{id}', [UserController::class,'storeImage'] );
+
+Route::get('/create_users', [UserController::class,'create'] );
+
+Route::get('/delete_user/{id}', [UserController::class,'destroy'] );
+
+
+
+
+
+
+
